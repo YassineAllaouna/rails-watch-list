@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dunod.com/sites/default/files/thumbnails/image/quest-ce-quun-bon-titre-de-film.jpg);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <ol>
+    <% @list.movies.each do |movie| %>
+   <li> <%= movie.title %> | <%= @list.bookmarks.first.comment %></li>
+    <% end %>
+  </ol>
+
+<div class="container">
+  <%= link_to "Back to Lists", lists_path  %> <%= link_to "Add a Movie", new_list_bookmark_path(@list)  %>
+</div>
+
+</div>
