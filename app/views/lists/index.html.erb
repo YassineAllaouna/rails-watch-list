@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2021-01/ErhLy4NXcAA_o_t.jpeg);">
   <div class="container">
     <h1>These are <strong>my</strong> lists!</h1>
     <p>Change your life and see my tastes in movies !</p>
@@ -7,15 +7,17 @@
 
 <div class="container">
   <h2>Listes</h2>
-  <div class="btn btn-flat">
-  <%= link_to "Back", lists_path  %> <%= link_to "Create a List", new_list_path %>
-</div>
-  <div class="row">
-    <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://csohn.chu-rouen.fr/wp-content/uploads/sites/44/2017/01/film-roll.jpg)">
-  <%= link_to list.name, list_path(list.id) %>
+  <div class="row justify-content-between">
+    <div class="col-12">
+      <% @lists.each do |list| %>
+      <div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://csohn.chu-rouen.fr/wp-content/uploads/sites/44/2017/01/film-roll.jpg)">
+      <%= link_to list.name, list_path(list.id) %>
+      </div>
+      <% end %>
+    </div>
   </div>
-</div>
 
-    <% end %>
+  <%= link_to "Create a List", new_list_path, class: "btn btn-ghost" %>
+
+
 </div>

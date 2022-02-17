@@ -1,9 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://groupe-reussite.fr/wp-content/uploads/2017/06/blog-bac-francais-commentaire-640x400-1.jpg);">
+  <div class="container">
+    <h1>Add a bookmark!</h1>
+  </div>
+</div>
+
+
 <div class="container">
-  <h1>New Bookmark </h1>
+
+
+  <h1><%= @list.name %></h1>
   <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.text_field :comment %>
+  <%= f.input :comment %>
   <%= f.association :movie %>
   <%= f.association :list %>
-  <%= f.submit %>
+  <%= link_to "Back to Lists", lists_path, class: "btn btn-ghost" %>
+  <%= f.submit class: "btn btn-ghost" %>
+
   <% end %>
+
+
 </div>
