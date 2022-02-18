@@ -2,11 +2,12 @@
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dunod.com/sites/default/files/thumbnails/image/quest-ce-quun-bon-titre-de-film.jpg);">
   <div class="container">
+    <h1><%= @list.name %></h1>
   </div>
 </div>
 
 <div class="container">
-  <h1><%= @list.name %></h1>
+
 
   <% @list.movies.each do |movie| %>
     <div class="card-product my-5">
